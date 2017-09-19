@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Admin Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+	
+		<!-- <form th:action="@{/logout}" method="get">
+			<button class="btn btn-md btn-danger btn-block" name="registration"
+				type="Submit">Logout</button>
+		</form>   --> 
+		
+		
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" th:href="@{/admin/allnotice}">DiscussBox</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		      <li class="active"><a th:href="@{/admin/allnotice}">Home</a></li>
+		      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Notice<span class="caret"></span></a>
+		        <ul class="dropdown-menu">
+		          <li><a th:href="@{/admin/mynotice}">My Notice</a></li>
+		          <li><a th:href="@{/admin/allnotice}">All Notice</a></li>
+		          <li><a th:href="@{/admin/addNotice}">Add New</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+		      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">User <span class="glyphicon glyphicon-menu-hamburger"></span></a>
+		        <ul class="dropdown-menu">
+		          <li><span th:utext="${userName}"></span></li>
+		          <li><a th:href="@{/logout}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+		 
+		 
+		 <div class="container">
+			<div class="row">
+				<div class="col-md-8" id="col_8_4">
+					<div class="row" id="col_12">
+	
+					</div>
+					<div class="row">
+						<div class="col-md-6" id="col_6">
+	
+						</div>
+						<div class="col-md-6" id="col_6">
+	
+						</div>				
+					</div>			
+				</div>
+				<div class="col-md-4" id="col_8_4">
+	
+				</div>		
+			</div>
+		</div>
+		 
+		<!--  <div class="container"> -->
+		  <h2></h2>
+		  <div class="panel panel-primary">
+		    <div class="panel-heading">Discussion</div>
+		    <div class="panel-body">
+		    	
+		    	<div th:each = "notices : ${notices}">
+			    	<div class="row" id="row">
+				    	<div id="box"><h2 th:if="${userName = notices.users.fullname}" th:text="${notices.ntitle}"></h2></div>
+				    	<div id="box2"><h5 th:if="${userName = notices.users.fullname}" th:text="${notices.users.fullname}"></h5>
+				    				  <h6 th:if="${userName = notices.users.fullname}" th:text="${notices.date}"></h6>
+				    				  <h6 th:if="${userName = notices.users.fullname}" th:text="${notices.users.email}"></h6></div>
+				    	<div id="box" class="truncate">
+				    		<p th:if="${userName = notices.users.fullname}" th:utext="${notices.nbody}">
+				    			
+				    		</p>
+				    	</div>
+			    	</div>
+				</div>
+				
+		    </div>
+		  </div>
+	</div>
+</body>
+
+	<script>
+	$(document).ready(function() {
+	(function(){
+	  	var showChar = 400;
+	    var ellipsestext = "...";
+		
+		$('.truncate').each(function() {
+	        var content = $(this).html();
+	        if(content.length > showChar) {
+	 
+	            var c = content.substr(0, showChar);
+	 			var h = content;	
+	            var html = '<div class="truncate-text" style="display:block">' + c + '<span class="moreellipses">' + ellipsestext + '&nbsp;&nbsp;<a href="" class="moreless more">more</a></span></span></div><div class="truncate-text" style="display:none">' + h + '<a href="" class="moreless less">Less</a></span></div>';
+	 
+	            $(this).html(html);
+	        }
+	 
+	    });
+	 
+	    $(".moreless").click(function(){
+			var thisEl = $(this); 
+	        if(thisEl.hasClass("less")) {
+	        	thisEl.closest('.truncate-text').prev('.truncate-text').toggle();
+	    		thisEl.closest('.truncate-text').slideToggle();
+	        } else {
+				thisEl.closest('.truncate-text').toggle();
+				thisEl.closest('.truncate-text').next('.truncate-text').fadeToggle();
+	        }
+		   	return false;
+	    });
+		/* end iffe */
+		}());
+	
+	/* end ready */    
+	});
+	</script>
+
+
+</html>

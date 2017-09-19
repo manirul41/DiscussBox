@@ -1,0 +1,77 @@
+body>div {
+	margin-top: 70px;
+	color: black;
+}
+
+
+.admin-message-text {
+	font-style: normal;
+	font-size: 22px;
+	color: #004080;
+}
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    color: black;
+    font-size: medium;
+    
+
+    /* the rest of your styling */
+}
+
+#_navcolor{
+	background-color: #ffffff;
+}
+
+#_nav_ul {
+	padding-left: 16px; 
+	border-right-width: 5px; 
+	margin-right: 13px; 
+	margin-left: 50px;
+	
+}
+
+ul>li {
+	margin-right: 7 px;
+}
+
+#_nav_ul > li > a {
+    color: #000000;
+}
+
+#row {
+	background-color:#F5F5F5;
+	margin:15px;
+}
+
+#box {
+	margin-right:15px;
+	margin-left:15px;
+}
+#box2 {
+	margin-right:15px;
+	margin-left:15px;
+	border-bottom: 2px solid #222222;
+}
+
+#box2>h5 {
+	color: green;
+}
+
+#col_8_4 {
+	min-height: 520px;
+	border-style: dotted;
+}
+
+#col_12 {
+	min-height: 350px;
+	border-style: dashed;
+	margin-bottom: 10px;
+}
+
+#col_6 {
+	min-height: 150px;
+	border-style: dashed;
+}
