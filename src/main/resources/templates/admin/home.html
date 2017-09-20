@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>Admin Page</title>
+<title>Home</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -23,21 +23,21 @@
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <a  th:href="@{/admin/allnotice}">
-		      <img alt="logo sample"  th:src="@{/images/logo_sample.png}"/></a>
+		      <img alt="logo sample"  th:src="@{/images/logo.png}"/></a>
 		    </div>
 		    <ul class="nav navbar-nav" id="_nav_ul">
 		      <li class="active"><a th:href="@{/admin/allnotice}">Home</a></li>
-		      <li><a th:href="@{/admin/allnotice}">বাংলাদেশ</a></li>
-		      <li><a th:href="@{/admin/allnotice}">আন্তর্জাতিক</a></li>
-		      <li><a th:href="@{/admin/allnotice}">অর্থনীতি</a></li>
-		      <li><a th:href="@{/admin/allnotice}">খেলা</a></li>
-		      <li><a th:href="@{/admin/allnotice}">বিনোদন</a></li>
-		      <li><a th:href="@{/admin/allnotice}">মতামত</a></li>
-		      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Notice<span class="caret"></span></a>
+		      <li><a th:href="@{/admin/allnotice}">Cat-1</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-2</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-3</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-4</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-5</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-6</a></li>
+		      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Post<span class="caret"></span></a>
 		        <ul class="dropdown-menu">
-		          <li><a th:href="@{/admin/mynotice}">My Notice</a></li>
-		          <li><a th:href="@{/admin/allnotice}">All Notice</a></li>
-		          <li><a th:href="@{/admin/addNotice}">Add New</a></li>
+		          <li><a th:href="@{/admin/mynotice}">My Post</a></li>
+		          <li><a th:href="@{/admin/allnotice}">All Post</a></li>
+		          <li><a th:href="@{/admin/addNotice}">Add New Post</a></li>
 		        </ul>
 		      </li>
 		    </ul>
@@ -108,11 +108,13 @@
 					</div>			
 				</div>
 				<div class="col-md-4" id="col_8_4">
-					
+					<div id="col_4_latest">
+						<h3>:: Latest Post</h3>
+					</div>
 					<div th:each = "notices : ${notices}">
 				    	<div class="row" id="row">
 					    	<div id="box">
-					    		<a th:href="@{${notices.ntitle}}"><span th:text="${notices.ntitle}"></span></a>
+					    		<a th:href="@{${notices.ntitle}}">:: <span th:text="${notices.ntitle}"></span></a>
 					    		</div>
 				    	</div>
 					</div>

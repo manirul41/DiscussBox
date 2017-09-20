@@ -19,18 +19,25 @@
 		</form>   --> 
 		
 		
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-default navbar-fixed-top" id="_navcolor">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand" th:href="@{/admin/allnotice}">DiscussBox</a>
+		      <a  th:href="@{/admin/allnotice}">
+		      <img alt="logo sample"  th:src="@{/images/logo.png}"/></a>
 		    </div>
-		    <ul class="nav navbar-nav">
+		    <ul class="nav navbar-nav" id="_nav_ul">
 		      <li class="active"><a th:href="@{/admin/allnotice}">Home</a></li>
-		      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Notice<span class="caret"></span></a>
+		      <li><a th:href="@{/admin/allnotice}">Cat-1</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-2</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-3</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-4</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-5</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-6</a></li>
+		      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Post<span class="caret"></span></a>
 		        <ul class="dropdown-menu">
-		          <li><a th:href="@{/admin/mynotice}">My Notice</a></li>
-		          <li><a th:href="@{/admin/allnotice}">All Notice</a></li>
-		          <li><a th:href="@{/admin/addNotice}">Add New</a></li>
+		          <li><a th:href="@{/admin/mynotice}">My Post</a></li>
+		          <li><a th:href="@{/admin/allnotice}">All Post</a></li>
+		          <li><a th:href="@{/admin/addNotice}">Add New Post</a></li>
 		        </ul>
 		      </li>
 		    </ul>
@@ -91,6 +98,29 @@
 				    			
 				    		</p>
 				    	</div>
+				    	<!-- <span th:text="${notice.ntitle}"></span>
+				    	<span >http://localhost:8080<span th:text="${#httpServletRequest.requestURI}"></span></span> -->
+				    	<div id="disqus_thread"></div>
+							<script>
+							
+								/**
+								*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+								*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+								
+								var disqus_config = function () {
+								this.page.url = '<span >http://localhost:8080<span th:text="${#httpServletRequest.requestURI}"></span></span>';  // Replace PAGE_URL with your page's canonical URL variable
+								this.page.identifier = '${notice.ntitle}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+								};
+								
+								(function() { // DON'T EDIT BELOW THIS LINE
+								var d = document, s = d.createElement('script');
+								s.src = 'https://discussboxmsg.disqus.com/embed.js';
+								s.setAttribute('data-timestamp', +new Date());
+								(d.head || d.body).appendChild(s);
+								})();
+							</script>
+							<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>             
+				    	<script id="dsq-count-scr" src="//discussboxmsg.disqus.com/count.js" async></script>
 			    	</div>
 				</div>
 				

@@ -23,18 +23,25 @@
 
 <body>
 	<div class="container">
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-default navbar-fixed-top" id="_navcolor">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">DiscussBox</a>
+		      <a  th:href="@{/admin/allnotice}">
+		      <img alt="logo sample"  th:src="@{/images/logo.png}"/></a>
 		    </div>
-		    <ul class="nav navbar-nav">
-		      <li class="active"><a href="#">Home</a></li>
-		      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Notice<span class="caret"></span></a>
+		    <ul class="nav navbar-nav" id="_nav_ul">
+		      <li class="active"><a th:href="@{/admin/allnotice}">Home</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-1</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-2</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-3</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-4</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-5</a></li>
+		      <li><a th:href="@{/admin/allnotice}">Cat-6</a></li>
+		      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Post<span class="caret"></span></a>
 		        <ul class="dropdown-menu">
-		          <li><a th:href="@{/admin/mynotice}">My Notice</a></li>
-		          <li><a th:href="@{/admin/allnotice}">All Notice</a></li>
-		          <li><a th:href="@{/admin/addNotice}">Add New</a></li>
+		          <li><a th:href="@{/admin/mynotice}">My Post</a></li>
+		          <li><a th:href="@{/admin/allnotice}">All Post</a></li>
+		          <li><a th:href="@{/admin/addNotice}">Add New Post</a></li>
 		        </ul>
 		      </li>
 		    </ul>

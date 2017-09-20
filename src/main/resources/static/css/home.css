@@ -53,7 +53,7 @@ ul>li {
 #box2 {
 	margin-right:15px;
 	margin-left:15px;
-	border-bottom: 2px solid #222222;
+	/* border-bottom: 2px solid #222222; */
 }
 
 #box2>h5 {
@@ -62,16 +62,24 @@ ul>li {
 
 #col_8_4 {
 	min-height: 520px;
-	border-style: dotted;
+	/* border-style: dotted; */
 }
 
 #col_12 {
 	min-height: 350px;
-	border-style: dashed;
+	/* border-style: dashed; */
 	margin-bottom: 10px;
 }
 
 #col_6 {
 	min-height: 150px;
-	border-style: dashed;
+	/* border-style: dashed; */
+}
+
+#col_4_latest {
+	background: #56ACDE;
+	min-height: 50px;
+}
+#col_4_latest>h3 {
+	padding-top: 13px;
 }
